@@ -1,4 +1,8 @@
 <%= form_for(@creature) do |f| %>
+<%= f.text_field :name %>
+
+<%= f.text_area :description %>
+
   <% if @creature.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@creature.errors.count, "error") %> prohibited this creature from being saved:</h2>

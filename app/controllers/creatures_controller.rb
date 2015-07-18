@@ -73,6 +73,6 @@ class CreaturesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def creature_params
-      params[:creature]
+    params.require(:creature).permit(:name,:description)
     end
 end
