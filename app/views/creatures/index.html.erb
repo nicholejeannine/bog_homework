@@ -1,17 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Creatures</h1>
+<h3 style="text-align: center;">Bogly Creatures</h3>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
+    <hr>
+<table table="table table-responsive" style="width: 100%;">
+<thead>
+<tr style-"text-align: center;">       <td>Name:</td>
+      <td>Description:</td>
+      <td>Show:</td>
+      <td>Edit:</td>
+      <td>Delete:</td>
     </tr>
-  </thead>
-
+</thead>
   <tbody>
+
     <% @creatures.each do |creature| %>
-      <tr>
+      <tr style="line-height: 3">
       <td><%= creature.name %></td>
             <td><%= creature.description %></td>
 
@@ -25,4 +29,4 @@
 
 <br>
 
-<%= link_to 'New Creature', new_creature_path %>
+<%= link_to 'Add Creature', new_creature_path %>

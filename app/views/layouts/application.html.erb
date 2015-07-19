@@ -4,33 +4,45 @@
   <title>BogHomework</title>
   <!-- Latest compiled and minified CSS & JS -->
   <link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Alice' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Walter+Turncoat' rel='stylesheet' type='text/css'>
+  <link href="/assets/stylesheets/screen.css" data-turbolinks-track="true" rel="stylesheet" type="text/css">
   <script src="//code.jquery.com/jquery.js"></script>
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <div class="container">
-  <div class="row">
-    <div class="page-header">
-        <h1>Bogly <br/> <small>A really disgusting place where creatures roam.</small></h1>
-      </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <h1><%= link_to "Bogly",root_path %></h1>
+
+        <p class="scribble">A disgusting place where creatures roam.</p>
+    </div>
   </div>
   <div class="row">
-    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+   <div class="col-xs-offset-5 col-xs-2">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" id="drop" class="dropdown-toggle" data-toggle="dropdown">Adventures: <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "Show All Creatures",creatures_path %> |</li>
+            <li><%= link_to "Add New Creature",new_creature_path %> |</li>
+            <li><a href="http://www.backpage.com">Get The Hell Outta Here</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+
+  <div class="row">
+    <div class="col-xs-12">
       <%= yield %>
     </div>
-    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-    <h3>Links:</h3>
-    <ul>
-    <li><%= link_to "Home",root_path %> |</li>
-        <li><%= link_to "All Creatures",creatures_path %> |</li>
-
-
-   </ul>
     </div>
   </div>
-</div>
 
 </html>
