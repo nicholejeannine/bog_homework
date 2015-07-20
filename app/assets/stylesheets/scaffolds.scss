@@ -3,11 +3,12 @@ $serif: 'Alice', serif;
 $scribble: 'Walter Turncoat', cursive;
 $background-color: #111;
 $alternate: scale-lightness(red, -30%);
-
+$link-color: scale-lightness(invert($background-color), 10%);
+$base-font: invert($background-color);
 
 html, body {
   @include background-image(linear-gradient(135deg, $background-color 22%, $alternate 70%, $background-color));
-  color: invert($background-color);
+  color: $base-font;
   font-family: $serif;
   font-size: 13px;
   line-height: 1.618;
@@ -42,15 +43,15 @@ pre {
 }
 
 a {
-  color: #000;
+  color: $link-color;
 
   &:visited {
-    color: #666;
+    color: $link-color;
   }
 
   &:hover {
-    color: #fff;
-    background-color: #000;
+    color: scale-lightness($background-color, 20%);
+    background-color:scale-lightness($link-color, 20%);
   }
 }
 
@@ -82,7 +83,7 @@ div {
     text-align: left;
     font-weight: bold;
     padding: 5px 5px 5px 15px;
-    font-size: 12px;
+    font-size: 120%;
     margin: -7px;
     margin-bottom: 0px;
     background-color: #c00;
@@ -90,7 +91,7 @@ div {
   }
 
   ul li {
-    font-size: 12px;
+    font-size: 110%;
     list-style: none;
   }
 }
@@ -100,5 +101,12 @@ div {
 }
 
 input, textarea{
+  background-color: $base-font;
   color: $background-color;
+}
+
+.table {
+  border-collapse: collapse;
+  line-height: 3;
+  vertical-align: center;
 }
