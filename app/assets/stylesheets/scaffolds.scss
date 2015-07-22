@@ -98,6 +98,7 @@ div {
 #drop {
   background-color: rgba($alternate, 0.3);
   color: invert($alternate);
+  margin-left: 15px;
 }
 
 input, textarea{
@@ -109,4 +110,10 @@ input, textarea{
   border-collapse: collapse;
   line-height: 3;
   vertical-align: center;
+}
+
+
+.well {
+  background-color: rgba($background-color, 0.7);
+  a: $link-color;
 }

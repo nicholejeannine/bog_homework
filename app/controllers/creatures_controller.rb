@@ -11,12 +11,14 @@ class CreaturesController < ApplicationController
   # GET /creatures/1.json
   def show
     @creature = Creature.find params[:id]
+    @tags = @creature.tags
 
   end
 
   # GET /creatures/new
   def new
     @creature = Creature.new
+    @tags = Tag.all
   end
 
   # GET /creatures/1/edit
@@ -28,8 +30,8 @@ class CreaturesController < ApplicationController
   # POST /creatures
   # POST /creatures.json
   def create
-    @creature = Creature.new(creature_params)
-
+    @creature = Creature.create(creature_params)
+    tags = params[:creature][:tag_ids]
     respond_to do |format|
       if @creature.save
         format.html { redirect_to @creature, notice: 'Creature was successfully created.' }
@@ -44,6 +46,7 @@ class CreaturesController < ApplicationController
   # PATCH/PUT /creatures/1
   # PATCH/PUT /creatures/1.json
   def update
+    @tags = Tag.all
     respond_to do |format|
       if @creature.update(creature_params)
         format.html { redirect_to @creature, notice: 'Creature was successfully updated.' }

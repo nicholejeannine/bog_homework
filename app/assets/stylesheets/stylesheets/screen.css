@@ -108,17 +108,24 @@ div.field, div.actions {
 #drop {
   background-color: rgba(179, 0, 0, 0.3);
   color: #4cffff;
+  margin-left: 15px;
 }
 
-/* line 103, ../scaffolds.scss */
+/* line 104, ../scaffolds.scss */
 input, textarea {
   background-color: #eeeeee;
   color: #111;
 }
 
-/* line 108, ../scaffolds.scss */
+/* line 109, ../scaffolds.scss */
 .table {
   border-collapse: collapse;
   line-height: 3;
   vertical-align: center;
+}
+
+/* line 116, ../scaffolds.scss */
+.well {
+  background-color: rgba(17, 17, 17, 0.7);
+  a: #f0f0f0;
 }
